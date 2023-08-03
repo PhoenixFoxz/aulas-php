@@ -68,11 +68,24 @@ if ($resultado3 > 100){
 <?php    
 }
 ?>
-
+<!-- Usando uma fração como parte de uma condição -->
 <?php 
 if(soma(2, 3, 10) >= 10){
-
+?>
+    <p>Kaue reprovado!!!</p>
+<?php
 }
 ?>
+
+<h3>Função com parâmetros opcionais</h3>
+<?php
+function saudacao($mensagem, $pessoa = "Fulano(a)"){
+    return "Olá, $mensagem $pessoa!";
+}
+?>
+
+<p><?=saudacao("bom-dia", "Melissa")?></p>
+<p><?=saudacao("boa noite", "Tanaka")?></p>    
+<p><?=saudacao("boa tarde")?></p> 
 </body>
 </html>
