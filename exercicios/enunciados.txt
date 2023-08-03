@@ -1,0 +1,12 @@
+	## Exercício 01
+Criar **variáveis** e/ou **constantes** para:
+
+- Data de hoje
+- Nome de uma pessoa
+- Nome de um curso que esta pessoa faz
+- Carga horária deste curso
+- Limite de faltas
+
+Coloque dados nestas variáveis e faça com que o script mostre no HTML uma mensagem apresentando o nome da pessoa, o nome do curso, a carga horária do curso e o limite de faltas.
+
+Destaque alguns destes dados usando CSS (com classes ou inline).
