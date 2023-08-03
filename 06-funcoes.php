@@ -38,6 +38,7 @@ function dadosCurso(){
     return "<b>Encher o saco no WhatsApp</b>";
 } 
 ?>
+
 <p>Estamos no curso de <?=dadosCurso()?></p>
 <p><?=dadosCurso()?> é ministrado no Senac Penha.</p>
 
@@ -51,6 +52,7 @@ function soma($valor1, $valor2, $valor3){
     return $total;
 }
 ?>
+
 <!-- Chamando e exibindo diretamente o retorno -->
 <p>Resultad0 1: <?=soma(10, 20, 5)?> </p>
 <p>Resultad0 2: <?=soma(23, 84, 1000.75)?> </p>
@@ -68,6 +70,7 @@ if ($resultado3 > 100){
 <?php    
 }
 ?>
+
 <!-- Usando uma fração como parte de uma condição -->
 <?php 
 if(soma(2, 3, 10) >= 10){
@@ -87,5 +90,32 @@ function saudacao($mensagem, $pessoa = "Fulano(a)"){
 <p><?=saudacao("bom-dia", "Melissa")?></p>
 <p><?=saudacao("boa noite", "Tanaka")?></p>    
 <p><?=saudacao("boa tarde")?></p> 
+
+<hr>
+
+<h2>Indução de tipos de dados</h2>
+<?php
+/* Tipos de dados mais comuns 
+string -> caracteres em geral
+int -> números inteiros
+float -> números em casas decimais
+array -> vetor */
+
+/* Introdução de tipos deve ser feita nos parâmetros e no retorno da função
+
+Isso auxiliará na entrada/saída correta dos dados manipulados pela função, além de melhorar as mensagens de erro quando ocorrem problemas.
+*/
+
+function verificaNegativo(int $valor):string{
+    if($valor < 0){
+        return "é negativo";
+    } else {
+        return "não é negativo";
+    }
+}
+?>
+<p>Número 10: <?=verificaNegativo(10)?></p>
+<p>Número -10: <?=verificaNegativo(-10)?></p>
+<p>Número 50: <?=verificaNegativo("TEXTO")?></p>
 </body>
 </html>
