@@ -107,15 +107,34 @@ Isso auxiliará na entrada/saída correta dos dados manipulados pela função, a
 */
 
 function verificaNegativo(int $valor):string{
+    
+    // Early Return
+    // é possivel omitir o else nesse caso
     if($valor < 0){
         return "é negativo";
-    } else {
+    } 
         return "não é negativo";
-    }
 }
 ?>
 <p>Número 10: <?=verificaNegativo(10)?></p>
 <p>Número -10: <?=verificaNegativo(-10)?></p>
-<p>Número 50: <?=verificaNegativo("TEXTO")?></p>
+
+<!-- Código abaixo dá erro ao usar indução de tipos: -->
+<!-- <p>Número 50: <?=verificaNegativo("TEXTO")?></p> -->
+
+<hr>
+
+<h2>Função anônima (ou closure, lambda)</h2>
+
+<?php
+$formataPreco = function(float $valor){
+    // R$ 1.000,00
+    $precoFormatado = "R$ ".number_format($valor, 2, ",",".");
+    return $precoFormatado;
+};
+?>
+
+<p>1000 formatado fica: <?=$precoFormatado?></p>
+
 </body>
 </html>
