@@ -26,12 +26,14 @@
             background-color: lightcoral;
         }
         tr:nth-child(odd){
-            background-color: lightblue;
-            color: darkblue;
-        }
-        tr:nth-child(even){
+            font-weight: 700;
             background-color: lightpink;
             color: darkred
+        }
+        tr:nth-child(even){
+            font-weight: 700;
+            background-color: lightgray;
+            color: gray;
         }
         h1 {
             text-align: center;
@@ -42,12 +44,25 @@
             padding: 30px;
             text-shadow: 3px 3px 2px rgb(83, 0, 0);
         }
+
+        caption {
+            font-family: 'Tilt Prism', cursive;
+            background-color: darkred;
+            color: lightcoral;
+            font-weight: bolder;
+            padding: 10px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            font-size: larger;
+        }
     </style>
 </head>
 <body>
     <h1>Exercício 5</h1>
-    <hr>
     <table>
+        <caption>
+            Notas
+        </caption>
         <tr>
             <th>Aluno</th>
             <th>1ª Nota</th>
