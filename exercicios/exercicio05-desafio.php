@@ -19,6 +19,7 @@
         table {
             width: 50%;
             margin: auto;
+            text-align: center;
         }
 
         td:hover {
