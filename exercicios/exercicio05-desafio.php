@@ -100,11 +100,11 @@
             ] 
         ];
 
-    $resultado = function (int $nota1, $nota2 ){
+    $resultado = function (float $nota1, float $nota2 ):float{
         return ($nota1 + $nota2) / 2;
     };
 
-    function situacao($resultado){
+    function situacao(float $resultado):string{
         if ($resultado >= 7){
             $condicao = "<span class='aprovado'>Aprovado</span>";
         } else {
@@ -127,3 +127,5 @@
     ?>
 </body>
 </html>
+
+
