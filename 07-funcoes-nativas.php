@@ -104,7 +104,32 @@ $produtosUnicos = array_unique($produtos);
 ?>
     <pre><?=var_dump($produtos)?></pre>
     <pre><?=var_dump($produtosUnicos)?></pre>
+
     <h2>Filtros</h2>
+    <p>Recursos/Constantes de análise de limpeza de dados aplicados através das funções <code>filter_var</code> e <code>filter_input()</code>.</p>
+    <h3>Validação</h3>
+<?php
+$email = "tiago@gmail.com.br";
+// Se o e-mail informado for inválido, ou seja, se não seguir o padrão geral de endereço de e-mail, a função abaixo retornará "false".
+?>
+    <pre>
+        <?=var_dump(filter_var($email, FILTER_VALIDATE_EMAIL))?>
+    </pre>
+    <h3>Sanitização</h3>
+<?php
+$ataque = "<script>
+   document.body.innerHTML = '<h1>Sou ráqui!! mwahahaha :</h1>'
+</script>";
+
+// Execução sem sanitização (script é válido)
+//echo $ataque;
+
+$ataqueSanitizado = filter_var($ataque, FILTER_SANITIZE_SPECIAL_CHARS);
+
+// Execução com sanitização (script é anulado)
+echo $ataqueSanitizado
+?>
+    <hr>
     <h2>Segurança</h2>
 </body>
 </html>
