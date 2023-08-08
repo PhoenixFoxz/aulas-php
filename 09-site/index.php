@@ -1,5 +1,4 @@
 <?php 
-$nomePagina = "Inicial";
 require "includes/header.php";
 ?>
         <h2>Bem-vindo ao site Exemplo</h2>

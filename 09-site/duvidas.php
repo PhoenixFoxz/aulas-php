@@ -1,5 +1,4 @@
 <?php 
-$nomePagina = "Duvidas";
 require "includes/header.php";
 ?>
         <h2>Página de dúvidas</h2>

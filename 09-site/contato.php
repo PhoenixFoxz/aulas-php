@@ -1,5 +1,4 @@
 <?php 
-$nomePagina = "Contato";
 require "includes/header.php";
 ?>
 <?php 

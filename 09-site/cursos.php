@@ -1,5 +1,4 @@
 <?php 
-$nomePagina = "Cursos";
 require "includes/header.php";
 ?>
         <h2>Páginas de cursos</h2>

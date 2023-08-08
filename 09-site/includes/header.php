@@ -1,3 +1,13 @@
+<?php 
+// Recuperar/descobrir qual o nome da página aberta no momento
+$pagina = basename($_SERVER['PHP_SELF']);
+switch($pagina){
+    case "index.php": $nomePagina = "Página inicial"; break;
+    case "cursos.php": $nomePagina = "Cursos"; break;
+    case "duvidas.php": $nomePagina = "Dúvidas"; break;
+    default: $nomePagina = "Contato"; break;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
