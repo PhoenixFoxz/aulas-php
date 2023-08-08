@@ -19,6 +19,20 @@
             <input required type="email" name="email" id="email">
         </p>
         <p>
+            <label for="idade">Idade:</label>
+            <input required type="number" name="idade" id="idade" min="12" max="120">
+        </p>
+        <div>
+            <!-- Importante: campos checkbox necessitam de [] junto com o name para o back-end (php) entender como uma lista (array) de valores -->
+            <p>Interesses: <br></p>
+            <input type="checkbox" name="interesses[]" id="sql" value="SQL">
+            <label for="sql">SQL</label>
+            <input type="checkbox" name="interesses[]" id="ux" value="UX">
+            <label for="ux">UX</label>
+            <input type="checkbox" name="interesses[]" id="node" value="node">
+            <label for="node">Node.js</label>
+        </div>
+        <p>
             <label for="mensagem">Mensagem:</label> <br>
             <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
         </p>
