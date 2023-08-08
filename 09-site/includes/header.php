@@ -1,12 +1,21 @@
 <?php 
 // Recuperar/descobrir qual o nome da página aberta no momento
 $pagina = basename($_SERVER['PHP_SELF']);
-switch($pagina){
-    case "index.php": $nomePagina = "Página inicial"; break;
-    case "cursos.php": $nomePagina = "Cursos"; break;
-    case "duvidas.php": $nomePagina = "Dúvidas"; break;
-    default: $nomePagina = "Contato"; break;
+// switch($pagina){
+//     case "index.php": $nomePagina = "Página Inicial"; break;
+//     case "cursos.php": $nomePagina = "Cursos"; break;
+//     case "duvidas.php": $nomePagina = "Dúvidas"; break;
+//     default: $nomePagina = "Contato"; break;
+// }
+
+// Função match() disponível a partir do PHP versão 8
+$nomePagina = match($pagina){
+    "index.php" => "Página Inicial",
+    "cursos.php" => "Cursos",
+    "duvidas.php" => "Dúvidas",
+    default => "Contato"
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
