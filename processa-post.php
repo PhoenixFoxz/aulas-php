@@ -18,7 +18,7 @@
     ?>
         <p style="color: red;">Você deve preencher nome e e-mail</p>
 
-        <p><a href='10-formulario.html'>Voltar</a></p>";
+        <p><a href='10-formulario.html'>Voltar</a></p>
     <?php
     } else {
         //$nome = filter_var($_POST["nome"], FILTER_SANITIZE_SPECIAL_CHARS);
