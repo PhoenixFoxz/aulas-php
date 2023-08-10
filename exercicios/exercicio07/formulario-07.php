@@ -31,19 +31,19 @@
             $ds = filter_input(INPUT_POST, "ds", FILTER_SANITIZE_SPECIAL_CHARS);
         ?>
             <h2>Dados:</h2>
-            <ul>
-                <li>Nome: <?= $nome ?></li>
-                <li>Preço: R$ <?= number_format($preco, 2, ",",".") ?></li>
-                <li>Disponibilidade: <?= $ds ?></li>
+            <ul class="list-group">
+                <li class="list-group-item">Nome: <?= $nome ?></li>
+                <li class="list-group-item">Preço: R$ <?= number_format($preco, 2, ",",".") ?></li>
+                <li class="list-group-item">Disponibilidade: <?= $ds ?></li>
                 <?php
                 if (!empty($fabricantes)) {
                 ?>
-                    <li>Fabricante: <?= $fabricantes ?></li>
+                    <li class="list-group-item">Fabricante: <?= $fabricantes ?></li>
                 <?php
                 }
                 if (!empty($mensagem)) {
                 ?>
-                    <li>Mensagem: <?= $mensagem ?></li>
+                    <li class="list-group-item">Mensagem: <?= $mensagem ?></li>
                 <?php
                 }
                 ?>
