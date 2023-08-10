@@ -26,6 +26,8 @@
 
             $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
 
+            $precoValidado = filter_var($preco, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
             $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_SPECIAL_CHARS);
 
             $ds = filter_input(INPUT_POST, "ds", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -33,7 +35,7 @@
             <h2>Dados:</h2>
             <ul class="list-group">
                 <li class="list-group-item">Nome: <?= $nome ?></li>
-                <li class="list-group-item">Preço: R$ <?= number_format($preco, 2, ",",".") ?></li>
+                <li class="list-group-item">Preço: R$ <?= number_format($precoValidado, 2, ",",".") ?></li>
                 <li class="list-group-item">Disponibilidade: <?= $ds ?></li>
                 <?php
                 if (!empty($fabricantes)) {
