@@ -24,6 +24,9 @@
 
             $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
 
+            /* Aqui no $preco, o ideal é sanitizar em vez de validar.
+            Você deverá usar dois filtros: um para sanitização de float e outro para permitir dígitos/casas
+            decimais. */
             $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
 
             $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_SPECIAL_CHARS);
