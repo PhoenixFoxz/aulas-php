@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saída de Dados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>Exercício 07</h1>
-    <hr>
-<?php
-if (empty($_POST["nome"]) || empty($_POST["preco"])) {
-?>
-        <p style="color: red;">Você deve preencher nome e o preço do produto</p>
-
-        <p><a href='exercicio07.php'>Voltar</a></p>
-<?php
-
-} else {
-    $fabricantes = filter_input(INPUT_POST, "fabricantes", FILTER_SANITIZE_SPECIAL_CHARS);
-    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
-    $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_FLOAT);
-    $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_SPECIAL_CHARS);
-?>
-    <h2>Dados:</h2>
-    <ul>
-        <li>Nome: <?= $nome ?></li>
-        <li>Preço: R$ <?=number_format($preco, 2, ',','.')?></li>
-        <li>Fabricante: <?=$fabricantes?></li>
+    <h1 class="text-center display-1">Exercício 07</h1>
+    <div class="shadow-lg p-5 rounded-4 container-lg col-md-6">
         <?php
-        // Se a variável mensagem NÃO ESTIVER VAZIA, mostre o <li> com a mensagem
-        if (!empty($mensagem)) {
+        if (empty($_POST["nome"]) || empty($_POST["preco"]) || empty($_POST["ds"])) {
         ?>
-            <li>Mensagem: <?= $mensagem ?></li>
+            <p style="color: red;">Você deve preencher nome, preço e a disponibilidade do produto</p>
+
+            <p><a href='exercicio07.php'>Voltar</a></p>
+        <?php
+
+        } else {
+            $fabricantes = filter_input(INPUT_POST, "fabricantes", FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
+
+            $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $ds = filter_input(INPUT_POST, "ds", FILTER_SANITIZE_SPECIAL_CHARS);
+        ?>
+            <h2>Dados:</h2>
+            <ul>
+                <li>Nome: <?= $nome ?></li>
+                <li>Preço: R$ <?= number_format($preco, 2, ",",".") ?></li>
+                <li>Disponibilidade: <?= $ds ?></li>
+                <?php
+                if (!empty($fabricantes)) {
+                ?>
+                    <li>Fabricante: <?= $fabricantes ?></li>
+                <?php
+                }
+                if (!empty($mensagem)) {
+                ?>
+                    <li>Mensagem: <?= $mensagem ?></li>
+                <?php
+                }
+                ?>
+            </ul>
         <?php
         }
         ?>
-<?php
-}
-?>
+    </div>
 </body>
-</html>
 
+</html>
